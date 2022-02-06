@@ -45,7 +45,16 @@ enum Game {
 
 }
 
-struct MatchedKey {
+struct MatchedKey: Equatable, Comparable, Hashable {
+    static func < (lhs: MatchedKey, rhs: MatchedKey) -> Bool {
+        switch lhs.color {
+        case GameColors.matched: return false
+        case GameColors.inclusive: return rhs.color == GameColors.matched
+        case GameColors.exclusive: return true
+        default: return true
+        }
+    }
+
     init(value: Character, color: Color) {
         self.value = String(value)
         self.color = color

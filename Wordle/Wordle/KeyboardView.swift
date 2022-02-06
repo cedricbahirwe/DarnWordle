@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KeyboardView: View {
+    var highlightKeys: [MatchedKey]
     var onKeyPressed: (String) -> Void
     var onDeletePressed: () -> Void
     var onEnterPressed: () -> Void
@@ -20,7 +21,7 @@ struct KeyboardView: View {
                             Button {
                                 onKeyPressed(key)
                             } label: {
-                                KeyboardKey(key, bg: Color(.secondarySystemBackground))
+                                KeyboardKey(key, bg:getColor(for: key) )
                             }
                         }
                     }
@@ -33,6 +34,14 @@ struct KeyboardView: View {
                 deleteButton
             }
             .padding(.horizontal, 12)
+        }
+    }
+
+    func getColor(for key: String) -> Color {
+        if let key = highlightKeys.first(where: { $0.value.lowercased() == key.lowercased() }) {
+            return key.color
+        } else {
+            return Color(.secondarySystemBackground)
         }
     }
     var enterButton: some View {

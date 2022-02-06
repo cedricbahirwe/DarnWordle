@@ -41,14 +41,19 @@ struct ContentView: View {
                 GameView(words: trialWords,
                          matches: matchedChars,
                          index: currentRowIndex)
-
-                KeyboardView(onKeyPressed: handleKey,
+                    .animation(.spring(), value: hasMatched)
+                KeyboardView(highlightKeys: getHighlightedKeys(),
+                             onKeyPressed: handleKey,
                              onDeletePressed: deleteInput,
                              onEnterPressed: performMatching)
                     .padding(.vertical, 30)
             }
             .foregroundColor(.primary)
         }
+    }
+
+    private func getHighlightedKeys() -> [MatchedKey] {
+        matchedChars.flatMap(\.value).sorted(by: >).removingDuplicates()
     }
 
     private func handleKey(_ key: String) {
