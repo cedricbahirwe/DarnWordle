@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct GameView: View {
-    var words: [String]
-    var matches: [Int: [MatchedKey]]
-    var index: Int
+    @ObservedObject var gameEngine: GameEngine
+
     var flattenWords : [[String]] {
-        words.map { $0.map { String($0) } }
+        gameEngine.trialWords.map { $0.map { String($0) } }
     }
     var body: some View {
         VStack {
@@ -25,7 +24,7 @@ struct GameView: View {
                                 Rectangle()
                                     .stroke(GameColors.primary, lineWidth: 2)
                                 Rectangle()
-                                    .fill(row < index ? getColor(at: row, for: char) : Color.clear)
+                                    .fill(row < gameEngine.currentRowIndex ? getColor(at: row, for: char) : Color.clear)
                             }
                             .aspectRatio(1, contentMode: .fit)
                             .transition(.scale)
@@ -43,7 +42,7 @@ struct GameView: View {
 
     func getColor(at row:Int, for char: String) -> Color {
         guard !char.isEmpty else { return Color.red }
-        guard let checkWord = matches[row] else { return Color.brown }
+        guard let checkWord = gameEngine.matchedChars[row] else { return Color.brown }
         let key = checkWord.first(where: { $0.value.lowercased() == char.lowercased() })!
         return key.color
     }

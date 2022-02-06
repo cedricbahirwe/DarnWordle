@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct KeyboardView: View {
-    var highlightKeys: [MatchedKey]
-    var onKeyPressed: (String) -> Void
-    var onDeletePressed: () -> Void
-    var onEnterPressed: () -> Void
+    @ObservedObject var gameEngine: GameEngine
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
@@ -19,9 +16,9 @@ struct KeyboardView: View {
                     HStack(spacing: 5) {
                         ForEach(row, id:\.self) { key in
                             Button {
-                                onKeyPressed(key)
+                                gameEngine.handleKey(key)
                             } label: {
-                                KeyboardKey(key, bg:getColor(for: key) )
+                                KeyboardKey(key, bg: gameEngine.getKeyHightlightColor(for: key) )
                             }
                         }
                     }
@@ -37,15 +34,8 @@ struct KeyboardView: View {
         }
     }
 
-    func getColor(for key: String) -> Color {
-        if let key = highlightKeys.first(where: { $0.value.lowercased() == key.lowercased() }) {
-            return key.color
-        } else {
-            return Color(.secondarySystemBackground)
-        }
-    }
     var enterButton: some View {
-        Button(action: onEnterPressed) {
+        Button(action: gameEngine.performMatching) {
             Text("Enter")
                 .textCase(.uppercase)
                 .padding(5)
@@ -58,7 +48,7 @@ struct KeyboardView: View {
     }
 
     var deleteButton: some View {
-        Button(action: onDeletePressed) {
+        Button(action: gameEngine.deleteLastInput) {
             Image(systemName: "delete.left")
                 .frame(width: 50, height: 60)
                 .background(Color(.secondarySystemBackground))
