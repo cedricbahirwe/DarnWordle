@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView: View {
     @ObservedObject var gameEngine: GameEngine
 
-    var flattenWords : [[String]] {
+    private var flattenWords : [[String]] {
         gameEngine.trialWords.map { $0.map { String($0) } }
     }
     var body: some View {
@@ -19,21 +19,7 @@ struct GameView: View {
                 HStack {
                     ForEach(0 ..< GameLayout.columns) { column in
                         let char = getChar(at: row, column)
-                        ZStack {
-                            ZStack {
-                                Rectangle()
-                                    .stroke(GameColors.primary, lineWidth: 2)
-                                Rectangle()
-                                    .fill(row < gameEngine.currentRowIndex ? getColor(at: row, for: char) : Color.clear)
-                            }
-                            .aspectRatio(1, contentMode: .fit)
-                            .transition(.scale)
-                            .animation(.easeInOut, value: char)
-
-                            Text(char)
-                                .font(.title.bold())
-                                .textCase(.uppercase)
-                        }
+                        GameCardView(model: .init(char, highlight: row < gameEngine.currentRowIndex ? getColor(at: row, for: char) : GameColors.clear))
                     }
                 }
             }
@@ -57,3 +43,41 @@ struct GameView: View {
 //        GameView()
 //    }
 //}
+
+extension GameView {
+    struct GameCardView: View {
+        let model: GameCardView.UIModel
+        var body: some View {
+            ZStack {
+                ZStack {
+                    Rectangle()
+                        .stroke(model.strokeColor, lineWidth: 2)
+                    Rectangle()
+                        .fill(model.highlight)
+                }
+                .aspectRatio(1, contentMode: .fit)
+                .transition(.scale)
+                .animation(.easeInOut, value: model.value)
+
+                Text(model.value)
+                    .font(.title.weight(.black))
+                    .textCase(.uppercase)
+            }
+        }
+    }
+}
+
+extension GameView.GameCardView {
+    struct UIModel {
+        let value: String
+        let strokeColor: Color
+        let highlight: Color
+
+        init(_ value: String, stroke: Color = GameColors.primary, highlight: Color) {
+            self.value = value
+            self.strokeColor = stroke
+            self.highlight = highlight
+        }
+    }
+}
+

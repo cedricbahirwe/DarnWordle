@@ -18,7 +18,7 @@ struct KeyboardView: View {
                             Button {
                                 gameEngine.handleKey(key)
                             } label: {
-                                KeyboardKey(key, bg: gameEngine.getKeyHightlightColor(for: key) )
+                                KeyboardKey(key, bg: gameEngine.getKeyHightlightColor(for: key))
                             }
                         }
                     }

@@ -54,16 +54,16 @@ class GameEngine: ObservableObject {
             if matchedWord.lowercased().contains(char) {
                 if let indexA = matchedWord.lowercased().firstIndex(of: char), let indexB = trialWords[currentRowIndex].lowercased().firstIndex(of: char) {
                     if indexA == indexB {
-                        let key = MatchedKey(value: char, color:GameColors.matched)
+                        let key = MatchedKey(char, color:GameColors.matched)
                         matchedChars[currentRowIndex]?.append(key)
                     } else {
-                        let key = MatchedKey(value: char, color: GameColors.inclusive)
+                        let key = MatchedKey(char, color: GameColors.inclusive)
                         matchedChars[currentRowIndex]?.append(key)
                     }
                 }
             } else {
                 print(char, matchedWord)
-                let key = MatchedKey(value: char, color: GameColors.exclusive)
+                let key = MatchedKey(char, color: GameColors.exclusive)
                 matchedChars[currentRowIndex]?.append(key)
             }
         }
