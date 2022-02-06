@@ -16,7 +16,7 @@ struct ContentView: View {
         ZStack {
             Color(.systemBackground).ignoresSafeArea()
             VStack {
-
+                
                 VStack {
                     HStack {
                         Image(systemName: "questionmark.circle")
@@ -34,7 +34,7 @@ struct ContentView: View {
                     if gameEngine.hasMatched {
                         Text("Congratulations").bold().foregroundColor(.green)
                     }
-                    #if DEB
+#if DEB
                     Button(action: {
                         print(gameEngine.matchedChars)
                     }) {
@@ -42,15 +42,15 @@ struct ContentView: View {
                             .lineLimit(2)
                             .foregroundColor(.red)
                     }
-                    #endif
+#endif
                 }
                 .padding(8)
                 .frame(maxWidth: .infinity)
                 .background(.thickMaterial, ignoresSafeAreaEdges: .top)
-
+                
                 GameView(gameEngine: gameEngine)
                     .animation(.spring(), value: gameEngine.hasMatched)
-
+                
                 KeyboardView(gameEngine: gameEngine)
                     .padding(.vertical, 30)
             }
@@ -65,7 +65,7 @@ struct ContentView: View {
             showWelcomeView = isUserFirstTime
         }
     }
-
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

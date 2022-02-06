@@ -72,6 +72,8 @@ struct MatchedKey: Equatable, Comparable, Hashable, BaseModel {
 
     let value: String
     let color: Color
+
+    var date: Date { Date.now }
     static let empty = MatchedKey("", color: GameColors.primary)
 
     func toDomainModel() -> GameView.GameCardView.UIModel {

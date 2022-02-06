@@ -52,7 +52,7 @@ struct WelcomeView: View {
     func getIntroView(keys: [MatchedKey], description: String) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                ForEach(keys, id: \.self) { key in
+                ForEach(keys, id: \.date) { key in
                     GameView.GameCardView(model: key.toDomainModel())
                 }
             }
