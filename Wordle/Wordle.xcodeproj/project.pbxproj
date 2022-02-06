@@ -14,6 +14,11 @@
 		CB16681F27AF05350049E638 /* WordleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16681E27AF05350049E638 /* WordleTests.swift */; };
 		CB16682927AF05350049E638 /* WordleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16682827AF05350049E638 /* WordleUITests.swift */; };
 		CB16682B27AF05350049E638 /* WordleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16682A27AF05350049E638 /* WordleUITestsLaunchTests.swift */; };
+		CB42353127AFEA5000A49195 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353027AFEA5000A49195 /* GameModel.swift */; };
+		CB42353327AFEA5600A49195 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353227AFEA5600A49195 /* GameEngine.swift */; };
+		CB42353527AFEA6000A49195 /* GameHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353427AFEA6000A49195 /* GameHelpers.swift */; };
+		CB42353727AFEC0100A49195 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353627AFEC0100A49195 /* GameView.swift */; };
+		CB42353927AFEC1700A49195 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353827AFEC1700A49195 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		CB16682427AF05350049E638 /* WordleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB16682827AF05350049E638 /* WordleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleUITests.swift; sourceTree = "<group>"; };
 		CB16682A27AF05350049E638 /* WordleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB42353027AFEA5000A49195 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		CB42353227AFEA5600A49195 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		CB42353427AFEA6000A49195 /* GameHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelpers.swift; sourceTree = "<group>"; };
+		CB42353627AFEC0100A49195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		CB42353827AFEC1700A49195 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,11 @@
 			children = (
 				CB16680D27AF05340049E638 /* WordleApp.swift */,
 				CB16680F27AF05340049E638 /* ContentView.swift */,
+				CB42353027AFEA5000A49195 /* GameModel.swift */,
+				CB42353227AFEA5600A49195 /* GameEngine.swift */,
+				CB42353627AFEC0100A49195 /* GameView.swift */,
+				CB42353827AFEC1700A49195 /* KeyboardView.swift */,
+				CB42353427AFEA6000A49195 /* GameHelpers.swift */,
 				CB16681127AF05350049E638 /* Assets.xcassets */,
 				CB16681327AF05350049E638 /* Preview Content */,
 			);
@@ -258,7 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB16681027AF05340049E638 /* ContentView.swift in Sources */,
+				CB42353527AFEA6000A49195 /* GameHelpers.swift in Sources */,
+				CB42353927AFEC1700A49195 /* KeyboardView.swift in Sources */,
 				CB16680E27AF05340049E638 /* WordleApp.swift in Sources */,
+				CB42353127AFEA5000A49195 /* GameModel.swift in Sources */,
+				CB42353727AFEC0100A49195 /* GameView.swift in Sources */,
+				CB42353327AFEA5600A49195 /* GameEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
