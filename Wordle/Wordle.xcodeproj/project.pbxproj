@@ -14,6 +14,7 @@
 		CB16681F27AF05350049E638 /* WordleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16681E27AF05350049E638 /* WordleTests.swift */; };
 		CB16682927AF05350049E638 /* WordleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16682827AF05350049E638 /* WordleUITests.swift */; };
 		CB16682B27AF05350049E638 /* WordleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16682A27AF05350049E638 /* WordleUITestsLaunchTests.swift */; };
+		CB18180527B1CD39000CD358 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18180427B1CD39000CD358 /* LogoView.swift */; };
 		CB42353127AFEA5000A49195 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353027AFEA5000A49195 /* GameModel.swift */; };
 		CB42353327AFEA5600A49195 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353227AFEA5600A49195 /* GameEngine.swift */; };
 		CB42353527AFEA6000A49195 /* GameHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB42353427AFEA6000A49195 /* GameHelpers.swift */; };
@@ -50,6 +51,7 @@
 		CB16682427AF05350049E638 /* WordleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB16682827AF05350049E638 /* WordleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleUITests.swift; sourceTree = "<group>"; };
 		CB16682A27AF05350049E638 /* WordleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB18180427B1CD39000CD358 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		CB42353027AFEA5000A49195 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		CB42353227AFEA5600A49195 /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
 		CB42353427AFEA6000A49195 /* GameHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHelpers.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				CB42353027AFEA5000A49195 /* GameModel.swift */,
 				CB42353227AFEA5600A49195 /* GameEngine.swift */,
 				CB42353627AFEC0100A49195 /* GameView.swift */,
+				CB18180427B1CD39000CD358 /* LogoView.swift */,
 				CB42353827AFEC1700A49195 /* KeyboardView.swift */,
 				CB42353427AFEA6000A49195 /* GameHelpers.swift */,
 				CB16681127AF05350049E638 /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				CB42353527AFEA6000A49195 /* GameHelpers.swift in Sources */,
 				CB42353927AFEC1700A49195 /* KeyboardView.swift in Sources */,
 				CB42353B27AFFA1300A49195 /* WelcomeView.swift in Sources */,
+				CB18180527B1CD39000CD358 /* LogoView.swift in Sources */,
 				CB16680E27AF05340049E638 /* WordleApp.swift in Sources */,
 				CB42353127AFEA5000A49195 /* GameModel.swift in Sources */,
 				CB42353727AFEC0100A49195 /* GameView.swift in Sources */,
@@ -441,7 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Wordle/Preview Content\"";
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				ENABLE_PREVIEWS = YES;
@@ -470,7 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Wordle/Preview Content\"";
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				ENABLE_PREVIEWS = YES;

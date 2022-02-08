@@ -34,7 +34,6 @@ struct ContentView: View {
                     if gameEngine.hasMatched {
                         Text("Congratulations").bold().foregroundColor(.green)
                     }
-#if DEB
                     Button(action: {
                         print(gameEngine.matchedChars)
                     }) {
@@ -42,7 +41,6 @@ struct ContentView: View {
                             .lineLimit(2)
                             .foregroundColor(.red)
                     }
-#endif
                 }
                 .padding(8)
                 .frame(maxWidth: .infinity)
